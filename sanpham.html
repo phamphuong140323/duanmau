@@ -1,0 +1,265 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="ASM.css">
+</head>
+
+<body class="bg-slate-100">
+    <header class="h-[70px] bg-red-600">
+        <div class="w-[1200px] mx-auto flex justify-between">
+            <div>
+                <a href=""><img src="img/logo1.png" alt="" width="140px"></a>
+            </div>
+            <div class="mt-6">
+                <button><a href=""><img src="img/Vector.png" alt="" class="divans-3"></a></button>
+                <a href="" class="rounded  border-2 py-2 px-6 border-gray-800 font-semibold text-sm text-black ml-4 hover:bg-gray-200">ĐĂNG
+                    KÝ</a>
+                <a href="" class="rounded  border-2 py-2 px-4 border-gray-800 bg-red-500 font-semibold text-sm text-red-500 text-white ml-2 hover:text-black hover:bg-gray-200">ĐĂNG
+                    NHẬP</a>
+            </div>
+        </div>
+        </div>
+    </header>
+    <nav class="h-[60px] bg-gray-600">
+        <div class="w-[1200px] mx-auto flex justify-between">
+            <div class=" text-lg">
+                <ul class="flex justify-between text-white mt-[16px]">
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="ASM.html">TRANG CHỦ</a></li>
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="ASM.html">GIỚI THIỆU </a></li>
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="sanpham.html">SẢN PHẨM </a></li>
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="ASM.html">DỊCH VỤ </a></li>
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="ASM.html">KHUYÊN MÃI</a></li>
+                    <li class="mr-[30px] hover:text-black  hover:font-bold trans-3"><a href="ASM.html">LIÊN HỆ</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class=" mt-[11px]">
+                    <form action="" class="rounded-xl flex w-[380px]">
+                        <input type="text" placeholder="Nhập tên sản phẩm" class="w-full text-lg-0 py-1 px-2 rounded-l-xl outline-0" />
+                        <button class=" bg-red-500 px-4 text-black cursor-pointer rounded-r-xl hover:bg-red-700 hover:text-white">
+                            Search
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="h-[400px] mt-3" style="background-image: url(img/banner.png); width: auto">
+        <div class="w-[1200px] mx-auto">
+            <div class="pt-9">
+                <div class="h-[330px] bg-white rounded py-6 px-4 flex justify-between">
+                    <div class="w-[780px] flex">
+                        <p class="h-[43px] text-2xl font-bold-gray-400-2 px-[14px] py-[3px] rounded-3xl bg-gray-200 relative top-[120px]">
+                            <button onclick="pre()">❮</button>
+                        </p>
+                        <img id="hinh" src="img/slide1.jpg" class="rounded mx-1">
+                        <p class="h-[43px] text-2xl font-bold-gray-400-2 px-[14px] py-[3px] rounded-3xl bg-gray-200 relative top-[120px]">
+                            <button onclick="next()">❯</button>
+                        </p>
+                    </div>
+                    <div>
+                        <img src="img/sale.png" alt="" class="rounded">
+                    </div>
+                    <script>
+                        var img = [];
+                        document.body.onload = function() {
+                            for (var i = 0; i < 3; i++) {
+                                img[i] = new Image();
+                                img[i].src = "img/slide" + (i + 1) + ".jpg";
+                            }
+                            auto();
+                        }
+                        var index = 0;
+                        var hinh = document.querySelector("#hinh");
+
+                        function next() {
+                            index++;
+                            if (index > 2) {
+                                index = 0;
+                            }
+                            hinh.src = img[index].src;
+                        }
+
+                        function pre() {
+                            index--;
+                            if (index < 0) {
+                                index = 2;
+                            }
+                            hinh.src = img[index].src;
+                        }
+
+                        var x;
+
+                        function auto() {
+                            clearInterval(x);
+                            x = setInterval("next()", 5000);
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="flex justify-between">
+        <div class="w-[220px] h-[1300px]  bg-gray-600 mt-6">
+            <ul class="">
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="ASM.html" class="text-xl text-white hover:text-black hover:font-bold">TRANG CHỦ</a></li>
+                <hr>
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="" class="text-lg text-white hover:text-black hover:font-bold">iPhone</a></li>
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="" class="text-lg text-white hover:text-black hover:font-bold">Samsung</a></li>
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="" class="text-lg text-white hover:text-black hover:font-bold">Oppo</a></li>
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="" class="text-lg text-white hover:text-black hover:font-bold">Khuyến mãi</a></li>
+                <li class="w-[200px] h-[60px] ml-4 py-3"><a href="" class="text-lg text-white hover:text-black hover:font-bold">Bán chạy</a></li>
+            </ul>
+
+        </div>
+
+        <div>
+            <div class="w-[1200px] h-[1300px] mx-5 shadow-lg mt-[23px]">
+                <div class="flex justify-between">
+                    <div class="w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2 bg-white">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+    
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                </div>
+                <div class="mt-[12px] flex justify-between">
+                    <div class="w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2 bg-white">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+    
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                    <div class="bg-white w-[290px] h-[400px] border-2 rounded shadow-lg px-2 pt-2">
+                        <div>
+                            <a href="ip.html"><img src="img/ip13.jpg" alt="" class="trans"></a>
+                        </div>
+                        <div class="px-2 pt-2">
+                            <a href="ip.html"><p class="text-center text-xl font-bold hover:text-red-500 text-shadow">iPhone 13 Pro Max 128GB</p></a>
+                            <div class="flex justify-start space-x-4">
+                                <p class="mt-2 font-bold">27.990.000 <u>đ</u></p>
+                                <p class="font-light text-sm mt-3"><strike>33.990.000 <u>đ</u></strike></p>
+                            </div>
+                            <button
+                                class="rounded  border-2 py-2 px-6 border-gray-800 text-sm text-black font-bold bg-gray-300 mx-[85px] mt-[10px] hover:bg-red-500">Mua</button>
+                        </div>
+    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="h-[70px] bg-gray-600 mt-2 text-center">
+
+        <div class="text-2xl text-white font-base relative top-5">
+            Phạm Tiến Phương - PH2549
+        </div>
+    </footer>
+</body>
+
+</html>
